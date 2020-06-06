@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title >Cigarette</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card style="background-color: black;">
+    <ion-card-content style="color:white;" >
+      <ion-icon name="skull"></ion-icon>
+     The most radioactive place on earth is smoker's lungs
+    </ion-card-content>
+  </ion-card>
+<ion-searchbar></ion-searchbar>
+
+  <ion-list>
+    <ion-item style="padding-top: 10px;padding-bottom: 10px;" *ngFor="let item of this.Cigarette">
+      <ion-avatar slot="start"><ion-icon name="skull"></ion-icon></ion-avatar>
+      <ion-label>{{item.brand}}</ion-label>
+      <ion-select  placeholder="in Pack(10 pcs)" okText="Okay" cancelText="Dismiss">
+        <ion-select-option *ngFor="let item of calliterator(10); let i=index" [value]="item">{{i+1}} Pack</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-button size="full" shape="round">
+    Checkout
+  </ion-button>
+</ion-footer>

@@ -1,0 +1,104 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+    <ion-back-button>back</ion-back-button>
+  </ion-buttons>
+ 
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title >Join Us</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="signupForm">
+  <ion-grid>
+    <ion-row >
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input formControlName="firstname"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+            <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input formControlName="lastname"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-card>
+      <ion-card-content>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Phone number</ion-label>
+          <ion-input formControlName="phonenumber" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
+<ion-card>
+  <ion-card-content>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input formControlName="password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">One More Time</ion-label>
+          <ion-input formControlName="passwordC"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
+
+<ion-row *ngIf="sentotpbool">
+  <ion-col>
+    <ion-item>
+      <ion-label position="floating">OTP for Number</ion-label>
+      <ion-input formControlName="otpN"></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item>
+      <ion-label position="floating">Otp for Email</ion-label>
+      <ion-input formControlName="otpE"></ion-input>
+    </ion-item>
+  </ion-col>
+</ion-row>
+<ion-row style="padding-top: 10%;text-align: center;" >
+  <ion-col *ngIf="!sentotpbool">
+    <ion-button (click)="sentotpbool=!sentotpbool">
+     Done
+    </ion-button>
+  </ion-col>
+  <ion-col  *ngIf="sentotpbool">
+    <ion-button (click)="signup()">
+    Sign Up
+    </ion-button>
+  </ion-col>
+</ion-row>
+  </ion-grid>
+</form>
+</ion-content>

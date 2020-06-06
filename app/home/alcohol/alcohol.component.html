@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title >Alcohol<span style="float: right;">{{limit}}ml left</span></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="background-color: black;">
+    <ion-card-content style="color:white; text-align: center;" >
+     Drinking is injuros to health
+    </ion-card-content>
+  </ion-card>
+<ion-list>
+  <ion-item  style="padding-top: 10px;padding-bottom: 10px;" *ngFor="let item of this.AlcoholCats" [routerLink]="item.link">
+<ion-icon slot="start" name="skull"></ion-icon>
+    <ion-label>{{item.data}}</ion-label>
+  </ion-item>
+</ion-list>
+<ion-card>
+<ion-card-header>
+  <ion-card-title>
+    <ion-card-subtitle>  You can't order more than 3250 ml/day.</ion-card-subtitle>
+  </ion-card-title>
+</ion-card-header>
+<ion-card-subtitle style="text-align:center">Limit Catagory wise</ion-card-subtitle>
+<ion-card-content>
+  <span><ion-icon name="arrow-forward-outline"></ion-icon> 5 * 650ml Beer</span><br>
+  <span><ion-icon name="arrow-forward-outline"></ion-icon> 3L Whisky</span><br>
+  <span><ion-icon name="arrow-forward-outline"></ion-icon> 3L Vodka</span><br>
+  <span><ion-icon name="arrow-forward-outline"></ion-icon> 3L Rum</span><br>
+  <span><ion-icon name="arrow-forward-outline"></ion-icon> 3L Gin</span><br>
+  <span><ion-icon name="arrow-forward-outline"></ion-icon> 3L Brandy</span><br>
+</ion-card-content>
+</ion-card>
+</ion-content>
+

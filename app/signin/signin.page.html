@@ -1,0 +1,53 @@
+
+
+  <ion-content>
+    <form [formGroup]="f">
+    <ion-grid style="height: 100%; padding-top: 35%;">
+      
+      <ion-row>
+        <ion-col>
+          <ion-img style="height: 100px;" src="../assets/icon/favicon.png"></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="font-size: large; text-align: center;">
+          Mandu Babu
+        </ion-col>
+      </ion-row>
+      <ion-row >
+        <ion-col size-md="6" offset-md="3">
+      <ion-card >
+        <ion-card-content>
+      <ion-row >
+        <ion-col >
+          <ion-item-divider >
+           <ion-input formControlName='u' autofocus class="colorset" placeholder="Username"></ion-input>
+          </ion-item-divider>
+          </ion-col>
+      </ion-row>
+      <ion-row> 
+        <ion-col >
+          <ion-item-divider>
+          <ion-input formControlName='p' type="password" placeholder="Password"></ion-input>
+        </ion-item-divider>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col >
+      <ion-button (click)="signin()" style="float: right;" size="small">Sign In</ion-button>
+    </ion-col>
+    </ion-row>
+    </ion-card-content>
+    </ion-card>
+  </ion-col>
+
+  </ion-row>
+  <ion-row>
+    <ion-col style="padding-top: 20%;text-align: center;">
+      <ion-nav-link  routerLink="../signup">Join Space and Time. Sign Up></ion-nav-link>
+    </ion-col>
+  </ion-row>
+    </ion-grid>
+  </form>
+  </ion-content>
+  

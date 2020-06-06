@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title >Alcohol<span style="float: right;">{{this.alcoholLimit}}ml left</span></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-searchbar></ion-searchbar>
+
+<ion-card *ngFor="let item of this.beer;let i=index;">
+  <ion-card-title style="font-size: medium;padding-top: 10px;padding-left: 10px;">{{item.data}}</ion-card-title>
+  <ion-card-content>
+    <form >
+    Quantity <ion-badge style="float: right;" >{{item.quantity}} ml</ion-badge>
+    <div style="padding-top: 20px;" >
+      <ion-select style=" color: black;" [interfaceOptions]="customPopoverOptions"  placeholder="No. of Bottles" okText="Okay" cancelText="Dismiss">
+      <ion-select-option *ngFor="let q of calliterator(item.quantity); let i=index" [value]="q">{{i+1}} bottles</ion-select-option>
+    </ion-select></div>
+  </form>
+  </ion-card-content>
+</ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-button size="full" shape="round">
+    Checkout
+  </ion-button>
+</ion-footer>
